@@ -89,6 +89,8 @@ CREATE TABLE access_point (
 		max_operating_temp INT NULL,
 		ip_standard INT NULL,
 		max_humidity INT NULL, 
+		file_photo_id INT NULL,
+		file_irradiation_id INT NULL,
 	    PRIMARY KEY (id)
 );
 
