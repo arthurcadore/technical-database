@@ -1,57 +1,64 @@
 USE datasheet;
 
-CREATE TABLE dados_tempo (
+CREATE TABLE access_point (
 	    id INT NOT NULL AUTO_INCREMENT,
-	    tempo TIMESTAMP NULL,
+	    name_model_itb VARCHAR(50) NOT NULL,
+	    name_model_h3c VARCHAR(50) NOT NULL,
+	    name_serie VARCHAR(50) NOT NULL,
+	    name_fw VARCHAR(50) NOT NULL,
+	    name_fw_last_ver VARCHAR(50) NOT NULL,
+		is_2_4Ghz INT NOT NULL, 
+		is_5GhZ INT NOT NULL, 
+		is_6Ghz INT NOT NULL, 
+		nominal_rate_2_4Ghz INT NULL,
+		nominal_rate_5Ghz INT NULL,
+		nominal_rate_6Ghz INT NULL,
+		mimo_class_2_4Ghz INT NULL,
+		mimo_class_5Ghz INT NULL,
+		mimo_class_6Ghz INT NULL,
+		rf_power_total_2_4Ghz INT NULL, 
+		rf_power_total_5Ghz INT NULL, 
+		rf_power_total_6Ghz INT NULL, 
+		rf_power_chain_2_4Ghz INT NULL, 
+		rf_power_chain_5Ghz INT NULL, 
+		rf_power_chain_6Ghz INT NULL, 
+		phy_num_antennas_2_4G INT NULL,
+		phy_num_antennas_5Ghz INT NULL,
+		phy_num_antennas_6Ghz INT NULL,
+		antenna_gain_2_4Ghz INT NULL,
+		antenna_gain_5Ghz INT NULL,
+		antenna_gain_6Ghz INT NULL,
+		antenna_type_2_4Ghz VARCHAR(50) NULL,
+		antenna_type_5Ghz VARCHAR(50) NULL,
+		antenna_type_6Ghz VARCHAR(50) NULL,
+		antena_eff_2_4Ghz INT NULL, 
+		antena_eff_5Ghz INT NULL, 
+		antena_eff_6Ghz INT NULL, 
+		vswr_2_4Ghz INT NULL, 
+		vswr_5Ghz INT NULL, 
+		vswr_6Ghz INT NULL, 
+		coverage_2_4Ghz INT NULL,
+		coverage_5Ghz INT NULL,
+		coverage_6Ghz INT NULL,
+		standard_2_4Ghz VARCHAR(50) NULL,
+		standard_5Ghz VARCHAR(50) NULL,
+		standard_6Ghz VARCHAR(50) NULL,
+		f_range_2_4Ghz VARCHAR(50) NULL,
+		f_range_5Ghz VARCHAR(50) NULL,
+		f_range_6Ghz VARCHAR(50) NULL,
+		bandwidth_2_4Ghz VARCHAR(50) NULL,
+		bandwidth_5Ghz VARCHAR(50) NULL,
+		bandwidth_6Ghz VARCHAR(50) NULL,
+		max_clients_2_4Ghz INT NULL,
+		max_clients_5Ghz INT NULL,
+		max_clients_6Ghz INT NULL,
+		max_bssid INT NULL,
+		ble_support INT NULL,
+		rfid_support INT NULL,
+		zigbee_support INT NULL,
+		flash_memory INT NULL,
+		ram_memory INT NULL
 	    PRIMARY KEY (id)
-);
-
-CREATE TABLE tabela_destino (
-	    id INT NOT NULL AUTO_INCREMENT,
-	    nome VARCHAR(255) NULL,
-	    campanha VARCHAR(255) NULL,
-	    ts_estado TIME NULL,
-	    ts_login TIME NULL,
-	    estado VARCHAR(255) NULL,
-	    pausa VARCHAR(255) NULL,
-	    pausa_ultima VARCHAR(255) NULL,
-	    ts_total_talk TIME NULL,
-	    ts_total_wrap TIME NULL,
-	    ts_total_wait TIME NULL,
-	    nomeDNS VARCHAR(255),
-	    PRIMARY KEY (id)
-);
-
-CREATE TABLE tabela_transferencia (
-	    unidadeNum VARCHAR(100) NULL,
-	    unidade VARCHAR(255) NULL,
-	    segmentoNum VARCHAR(100) NULL,
-	    segmento VARCHAR(255) NULL,
-	    seg_icc VARCHAR(100) NULL,
-	    produto VARCHAR(255) NULL,
-	    suporte VARCHAR(45) NULL,
-	    qualificacaoiccNum VARCHAR(100) NULL,
-	    qualificacaoicc VARCHAR(100) NULL,
-	    transfCHAT VARCHAR(100) NULL,
-	    ura VARCHAR(45) NULL,
-	    filaDestino VARCHAR(20) NULL,
-	    Email VARCHAR(255) NULL
-);
-
-CREATE TABLE priorizacao (
-    	    nome VARCHAR(500) NULL,
-    	    cpf VARCHAR(11) NULL,
-    	    prioridade VARCHAR(5) NULL,
-    	    fila VARCHAR(5) NULL,
-    	    segmento VARCHAR(255) NULL,
-            unidade VARCHAR(255) NULL
-);
-
-CREATE TABLE clientes_fila (
-	    campanha VARCHAR(80) NULL, 
-	    fila VARCHAR(80) NULL, 
-	    telefone VARCHAR(45) NULL,
-	    ts_entrada TIME NULL
 );
 
 -- Crie o usuário
