@@ -97,7 +97,7 @@ CREATE TABLE access_point (
 CREATE USER 'pythonConnector'@'%' IDENTIFIED BY 'Python@connect123';
 
 -- Conceda privilégios ao usuário no banco de dados currentTS
-GRANT ALL PRIVILEGES ON currentTS.* TO 'pythonConnector'@'%';
+GRANT ALL PRIVILEGES ON datasheet.* TO 'pythonConnector'@'%';
 
 -- Atualize os privilégios
 FLUSH PRIVILEGES;
