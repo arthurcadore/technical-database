@@ -1,10 +1,12 @@
+/* Estilos para o body */
 body {
-    background-color: #ffffff; /* branco */
+    background-color: rgb(229, 255, 240); /* Verde claro */
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
 }
 
+/* Estilos para a tabela */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -12,7 +14,7 @@ table {
 }
 
 table, th, td {
-    border: 1px solid #dddddd; /* cinza claro */
+    border: 1px solid rgb(0, 0, 0); /* Preto */
 }
 
 th, td {
@@ -21,26 +23,30 @@ th, td {
 }
 
 th {
-    background-color: #f2f2f2; /* cinza claro */
+    background-color: #22e022; /* Verde */
 }
 
-tr:nth-child(even) {
-    background-color: #f9f9f9; /* cinza mais claro */
+/* Estilos para linhas pares da tabela */
+tr:nth-child(2n) {
+    background-color: rgb(2, 2, 2); /* Cinza escuro */
 }
 
+/* Estilos para linhas ao passar o mouse */
 tr:hover {
-    background-color: #f1f1f1; /* cinza ainda mais claro ao passar o mouse */
+    background-color: rgb(120, 141, 120); /* Verde mais escuro */
 }
 
+/* Estilos para botões */
 button {
-    background-color: #4CAF50; /* verde */
-    color: white;
+    background-color: rgb(76, 175, 80); /* Verde */
+    color: rgb(69, 160, 73); /* Verde mais escuro */
     padding: 10px 20px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
 }
 
+/* Estilos para botões ao passar o mouse */
 button:hover {
-    background-color: #45a049; /* tom mais escuro de verde ao passar o mouse */
+    background-color: rgb(69, 160, 73); /* Verde mais escuro */
 }
