@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySQL Data Table</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+</head>
+<body>
+    <h1>MySQL Data Table</h1>
+    <table id="data-table" class="display">
+        <thead>
+            <tr>
+                <!-- Colunas da sua tabela -->
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <!-- Adicione mais colunas conforme necessário -->
+            </tr>
+        </thead>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#data-table').DataTable({
+                "ajax": "/data",
+                "columns": [
+                    { "data": "id" },
+                    { "data": "name" },
+                    { "data": "email" }
+                    // Adicione mais colunas conforme necessário
+                ]
+            });
+        });
+    </script>
+</body>
+</html>

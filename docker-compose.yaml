@@ -6,4 +6,10 @@ services:
       context: ./database/
     ports:
       - "3306:3306"
+  backfront:
+    container_name: backfront
+    build:
+      context: ./app/
+    ports:
+      - "80:5000"
  
