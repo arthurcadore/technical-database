@@ -2,13 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MySQL Data Table</title>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+    <title>Access Point Table</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
 </head>
 <body>
-    <h1>Access Points</h1>
-    <table id="data-table" class="display">
+    <table id="accessPointTable" class="display">
         <thead>
             <tr>
                 <th>ID</th>
@@ -47,72 +49,18 @@
                 <th>VSWR 2.4GHz</th>
                 <th>VSWR 5GHz</th>
                 <th>VSWR 6GHz</th>
-                <th>Coverage 2.4GHz</th>
-                <th>Coverage 5GHz</th>
-                <th>Coverage 6GHz</th>
-                <th>Standard 2.4GHz</th>
-                <th>Standard 5GHz</th>
-                <th>Standard 6GHz</th>
-                <th>F Range 2.4GHz</th>
-                <th>F Range 5GHz</th>
-                <th>F Range 6GHz</th>
-                <th>Bandwidth 2.4GHz</th>
-                <th>Bandwidth 5GHz</th>
-                <th>Bandwidth 6GHz</th>
-                <th>Max Clients 2.4GHz</th>
-                <th>Max Clients 5GHz</th>
-                <th>Max Clients 6GHz</th>
-                <th>Max BSSID</th>
-                <th>BLE Support</th>
-                <th>RFID Support</th>
-                <th>Zigbee Support</th>
-                <th>Flash Memory</th>
-                <th>RAM Memory</th>
-                <th>Chipset RF Brand</th>
-                <th>Chipset RF Model</th>
-                <th>Chipset CPU Brand</th>
-                <th>Chipset CPU Model</th>
-                <th>Chipset PHY Brand</th>
-                <th>Chipset PHY Model</th>
-                <th>Surge Protection Contact</th>
-                <th>Surge Protection Discharge</th>
-                <th>IF 100 Eth</th>
-                <th>IF 1000 Eth</th>
-                <th>IF 2500 Eth</th>
-                <th>IF 10000 Eth</th>
-                <th>IF 40000 Eth</th>
-                <th>IF 100000 Eth</th>
-                <th>IF P4</th>
-                <th>IF Serial</th>
-                <th>IF USB</th>
-                <th>IF Reset</th>
-                <th>IF Lock Kensington</th>
-                <th>Power Max</th>
-                <th>Power Nominal</th>
-                <th>Power Standards</th>
-                <th>LED Types</th>
-                <th>LED Colors</th>
-                <th>Chassis Color</th>
-                <th>Chassis Material</th>
-                <th>Installation Method</th>
-                <th>Min Operating Temp</th>
-                <th>Max Operating Temp</th>
-                <th>IP Standard</th>
-                <th>Max Humidity</th>
-                <th>File Photo ID</th>
-                <th>File Irradiation ID</th>
             </tr>
         </thead>
     </table>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('#data-table').DataTable({
-                "ajax": "/data",
+            $('#accessPointTable').DataTable({
+                "ajax": {
+                    "url": "/data",
+                    "dataSrc": ""
+                },
                 "columns": [
-                    { "data": "id" },
+                { "data": "id" },
                     { "data": "name_model_itb" },
                     { "data": "name_model_h3c" },
                     { "data": "name_serie" },
@@ -148,60 +96,6 @@
                     { "data": "vswr_2_4Ghz" },
                     { "data": "vswr_5Ghz" },
                     { "data": "vswr_6Ghz" },
-                    { "data": "coverage_2_4Ghz" },
-                    { "data": "coverage_5Ghz" },
-                    { "data": "coverage_6Ghz" },
-                    { "data": "standard_2_4Ghz" },
-                    { "data": "standard_5Ghz" },
-                    { "data": "standard_6Ghz" },
-                    { "data": "f_range_2_4Ghz" },
-                    { "data": "f_range_5Ghz" },
-                    { "data": "f_range_6Ghz" },
-                    { "data": "bandwidth_2_4Ghz" },
-                    { "data": "bandwidth_5Ghz" },
-                    { "data": "bandwidth_6Ghz" },
-                    { "data": "max_clients_2_4Ghz" },
-                    { "data": "max_clients_5Ghz" },
-                    { "data": "max_clients_6Ghz" },
-                    { "data": "max_bssid" },
-                    { "data": "ble_support" },
-                    { "data": "rfid_support" },
-                    { "data": "zigbee_support" },
-                    { "data": "flash_memory" },
-                    { "data": "ram_memory" },
-                    { "data": "chipset_rf_brand" },
-                    { "data": "chipset_rf_model" },
-                    { "data": "chipset_cpu_brand" },
-                    { "data": "chipset_cpu_model" },
-                    { "data": "chipset_phy_brand" },
-                    { "data": "chipset_phy_model" },
-                    { "data": "surge_protection_contact" },
-                    { "data": "surge_protection_discharge" },
-                    { "data": "if_100_eth" },
-                    { "data": "if_1000_eth" },
-                    { "data": "if_2500_eth" },
-                    { "data": "if_10000_eth" },
-                    { "data": "if_40000_eth" },
-                    { "data": "if_100000_eth" },
-                    { "data": "if_p4" },
-                    { "data": "if_serial" },
-                    { "data": "if_usb" },
-                    { "data": "if_reset" },
-                    { "data": "if_lock_kensington" },
-                    { "data": "power_max" },
-                    { "data": "power_nominal" },
-                    { "data": "power_standards" },
-                    { "data": "led_types" },
-                    { "data": "led_collors" },
-                    { "data": "chassis_collor" },
-                    { "data": "chassis_material" },
-                    { "data": "instalation_method" },
-                    { "data": "min_operating_temp" },
-                    { "data": "max_operating_temp" },
-                    { "data": "ip_standard" },
-                    { "data": "max_humidity" },
-                    { "data": "file_photo_id" },
-                    { "data": "file_irradiation_id" }
                 ]
             });
         });
