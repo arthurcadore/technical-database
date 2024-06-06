@@ -3,7 +3,7 @@ services:
   database:
     container_name: database
     build:
-      context: ./database/
+      context: ./db/
     ports:
       - "3306:3306"
   backfront:
